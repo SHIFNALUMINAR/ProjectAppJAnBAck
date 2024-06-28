@@ -1,0 +1,204 @@
+Node
+------
+node server - js environment+js libraries 
+
+features :-  
+----------------
+
+extremely faster - no need to use external engines while running node server in browser
+                   bcz browser already have js engine 
+
+                 - asynchronous :- single threaded (single call stack) + event loop 
+
+highly scalable  - we can create large servers using node 
+open source      - node and node libraries are freely available 
+
+
+Node Global Objects 
+---------------------
+it can access anywhere in node js files without exporting/importing 
+console.log()  setTimeOut()
+
+
+Node Module System 
+--------------------
+
+each file in js is considered as module 
+to reuse modules in js we have export & import 
+import - require()
+export - exports / module.exports 
+
+js file 
+
+
+exports function 1()
+
+exports function 2()
+
+----------------
+
+js file 
+
+
+function 1()
+
+function 2()
+
+module.exports={function 1,function 2}
+
+inbuilt modules in js 
+----------------------
+
+fs - file system module -to handle related operation(read/write/append)
+crypto - contain tools for encryption, hashing ... 
+process - to process environmental variables during running state 
+
+package system in node 
+________________________
+
+package is collection of modules  
+
+- package.json :- handle packages in node ,it contain npm configurations 
+- install packages  :- npm i packageName
+- node_modules :- store copy of installed packages   - npm i
+- package-lock.json :- to hold version of installed packages 
+
+
+Express 
+__________ 
+
+framework of node , resolve client server requests 
+
+Server Creation 
+-----------------
+- npm i express
+
+.env file 
+----------
+
+used to store environmental variables 
+environmental variables :- variables that contain application cofiguarations 
+                           needed during run-time 
+
+                           it convert static working of app into dynamic 
+                           ( local host running to server running)
+
+                           process module  handle env variables in node 
+
+
+MVC- Model View Controle
+-------------------------
+
+
+
+MongoDB
+------------
+
+_______________________________________________________________________
+SQL                                                     MongoDB 
+_______________________________________________________________________
+
+- store data as table(rows & columns)     - collection of json documents 
+- relational dbms                         - NoSQL db 
+- uses fixed schema                       - uses dynamic schema 
+- optimised to complex join               - optimised for scalability and
+  and transactions                          performance
+- support rich set of data-types          - limited amount of data-types
+- ACID (atomicity,consistancy,Isolation,  - CAP (consistancy,availability,
+  durability)                               partition tolerence)
+- mainly used for traditional business    - uses in bigData and real-time web-apps
+  applications 
+
+________________________________________________________________________
+
+
+mongoDB Shell Commands 
+------------------------
+
+-> show databases      - list all databases in our system 
+-> use databaseName    - to open a perticular database 
+-> show collections    - list collections from a database 
+
+read
+________ 
+
+-> db.collectionName.find()
+                       - read all objects inside collection
+-> db.collectionName.find(condition)
+                       - read datas that satisfy the condition 
+-> db.collectionName.find().limit(2) 
+                       - read 2 objects in that collection
+-> db.collectionName.find().sort({key:1/-1})
+                       -  1 ascending  -1 descending 
+-> db.collectionName.findOne(condition)
+                       - read one object 
+Query Commands 
+--------------
+- $gt / $lt / $gte  $lte 
+- $or / $and
+- $regex
+
+Create 
+___________
+
+-> db.collectionName.insertOne({datas})
+-> db.collectionName.insertMany([{object1},{object2},...])
+
+Update
+_________ 
+
+->db.collectionName.updateOne()
+->db.collectionName.updateMany()
+
+query command - $set , $inc(1)/$inc(-1) , $push / $pull 
+
+Delete
+__________ 
+
+->db.collectionName.deleteOne()
+->db.collectionName.deleteMany()
+
+----------------------------------------------------------------------------------
+
+aggregation - used to fetch datas by join two collections 
+
+______________________________________________________________________________________ 
+
+mongoose 
+--------
+library used to connect mongodb with node server 
+
+
+try catch in js
+________________________
+used to resolve unexpected errors in js
+
+try{
+ error causing code
+}
+catch{
+  code 
+}
+__________________________________________________________________________________
+if api req body contain file type data then the req header content will be
+
+{
+  Content-Type:multipart/formData
+}
+
+if no file type content in req body then add default header
+
+{
+  Content-Type:application/json
+}
+
+
+multer
+_________
+
+its a js library used to store file contents in db 
+middleware - 
+
+_________________________________________________________________________________
+
+json web token - library used to apply autherization in server side
